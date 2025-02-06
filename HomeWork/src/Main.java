@@ -1,3 +1,4 @@
+import java.io.StringReader;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -8,7 +9,44 @@ public class Main {
         //faizHesaplama();
         //notHesaplama();
         //ustHesaplama();
-        hangisiBuyuk();
+        //hangisiBuyuk();
+        metinsel();
+    }
+    private static void metinsel(){
+        //ilk
+        /*System.out.println("\n"+"---Cümlede kaç adet Boşluk var---"+"\n");
+        String cumle="Merhaba bu bir ÖRnek Cümledir";
+
+        int bosluk =0;
+        for(int i=0; i<cumle.length(); i++){
+            if (cumle.charAt(i)==' '){
+                bosluk++;
+            }
+            if (i==cumle.length()-1){
+                System.out.printf("\n"+"Cümlede %s adet boşluk var",bosluk);
+            }
+        }*/
+
+        //ikinci
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("\n"+"----Palindrom Kelimeler----"+"\n");
+
+        System.out.print("Kelimeyi Giriniz: ");
+        String kelime=scanner.next();
+
+        String tersKelime="";
+        for (int i=kelime.length()-1; i>=0; i--){
+            tersKelime+= kelime.charAt(i);
+        }
+        System.out.println(tersKelime);
+        if (kelime.equals(tersKelime)){
+            System.out.println("Bu bir Polindrom kelimedir");
+        }else {
+            System.out.println("Bu bir Polindrom Kelime değildir");
+        }
+        metinsel();
+
+
     }
     private static void hangisiBuyuk(){
         Scanner scanner=new Scanner(System.in);

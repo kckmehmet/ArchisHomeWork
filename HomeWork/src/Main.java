@@ -7,7 +7,49 @@ public class Main {
         //ciftTek();
         //faizHesaplama();
         //notHesaplama();
+        //ustHesaplama();
+        hangisiBuyuk();
     }
+    private static void hangisiBuyuk(){
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("\n"+"----3 Tane Sayı giriniz ve Hangisinin büyük olduğunu bulalım----"+"\n");
+        System.out.print("Sayı 1: ");
+        int sayi1=scanner.nextInt();
+        System.out.print("\n"+"Sayı 2: ");
+        int sayi2= scanner.nextInt();
+        System.out.print("\n"+"Sayı 3: ");
+        int sayi3=scanner.nextInt();
+
+        int buyuk=0;
+
+        if (sayi1>0){
+            buyuk=sayi1;
+        }
+        if (sayi2>buyuk){
+            buyuk=sayi2;
+        }
+
+        if (sayi3>buyuk){
+            buyuk=sayi3;
+        }
+        System.out.println("\n"+"En Büyüğü: "+buyuk);
+        hangisiBuyuk();
+    }
+    private static void ustHesaplama(){
+        System.out.println("\n"+"-----Üst Hesaplama-----"+"\n");
+        Scanner scanner=new Scanner(System.in);
+        System.out.print("Taban sayısını giriniz: ");
+        int taban= scanner.nextInt();
+        System.out.print("\n"+"Tavan sayısını giriniz: ");
+        int tavan= scanner.nextInt();
+        int ust=taban;
+        for (int i=1;i<tavan;i++){
+            ust=ust*taban;
+        }
+        System.out.println("\n"+"Bulunan Üst: "+ust);
+        ustHesaplama();
+    }
+
     private static void notHesaplama(){
         System.out.println("\n"+"-----Puan Hesaplama-----"+"\n");
         String[] dersler={"Mat","Fen","Türkçe","Tarih"};

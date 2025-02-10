@@ -7,10 +7,10 @@ public class Main {
     public static void main(String[] args) {
         //ciftTek();
         //faizHesaplama();
-        //notHesaplama();
+        notHesaplama();
         //ustHesaplama();
         //hangisiBuyuk();
-        metinsel();
+       // metinsel();
     }
     private static void metinsel(){
         //ilk
@@ -28,7 +28,7 @@ public class Main {
         }*/
 
         //ikinci
-        Scanner scanner=new Scanner(System.in);
+        /*Scanner scanner=new Scanner(System.in);
         System.out.println("\n"+"----Palindrom Kelimeler----"+"\n");
 
         System.out.print("Kelimeyi Giriniz: ");
@@ -44,7 +44,10 @@ public class Main {
         }else {
             System.out.println("Bu bir Polindrom Kelime değildir");
         }
-        metinsel();
+        metinsel();*/
+
+        //üçüncü,
+
 
 
     }
@@ -90,35 +93,42 @@ public class Main {
 
     private static void notHesaplama(){
         System.out.println("\n"+"-----Puan Hesaplama-----"+"\n");
-        String[] dersler={"Mat","Fen","Türkçe","Tarih"};
-        double[][] notlar=new double[dersler.length][1];
+        String[] dersler={"Matematik","Fen Bilgisi","Türkçe","Tarih"};
+        double[][] notlar=new double[dersler.length][2];
+        double[] ortalama=new double[dersler.length];
+        double karneOrtalama=0;
         Scanner scanner=new Scanner(System.in);
 
-        System.out.print("Matematik Not Ortalamasını Giriniz: ");
-        double notMat= scanner.nextDouble();
-        System.out.print("\n"+"Fen Bilgisi Not Ortalamasını Giriniz: ");
-        double notFen= scanner.nextDouble();
-        System.out.print("\n"+"Türkçe Not Ortalamasını Giriniz: ");
-        double notTurkce=scanner.nextDouble();
-        System.out.print("\n"+"Tarih Not Ortalamasını Giriniz: ");
-        double notTarih= scanner.nextDouble();
+        for (int i=0;i< dersler.length;i++){
+            System.out.println("-------------------");
+            for (int j=0;j<notlar[i].length;j++){
+                System.out.printf("%1s %2s. Sınav Puanını Giriniz:  ",dersler[i],j+1);
+                notlar[i][j]= scanner.nextInt();
+            }
+        }
 
-        double ortalama=(notFen+notMat+notTarih+notTurkce)/4;
-
-        if (ortalama>85){
-            System.out.println("Not Ortalamanız: "+ortalama);
+        for (int i=0;i< notlar.length;i++){
+            System.out.println("\n"+"-----------------"+"\n");
+            ortalama[i]=(notlar[i][0]+notlar[i][1])/2;
+            System.out.println(dersler[i]+" dersi not ortalaması= "+ortalama[i]);
+            karneOrtalama+=ortalama[i];
+        }
+        karneOrtalama=karneOrtalama/4;
+        System.out.println("---------------"+"\n");
+        if (karneOrtalama>85){
+            System.out.println("Not Ortalamanız: "+karneOrtalama);
             System.out.println("Tebrikler Takdir Belgesi Kazandınız...");
             notHesaplama();
-        } else if (ortalama>70) {
-            System.out.println("Not Ortalamanız: "+ortalama);
+        } else if (karneOrtalama>70) {
+            System.out.println("Not Ortalamanız: "+karneOrtalama);
             System.out.println("Tebrikler Teşşekür Belgesi Kazandınız...");
             notHesaplama();
-        }else if (ortalama>=50){
-            System.out.println("Not Ortalamanız: "+ortalama);
+        }else if (karneOrtalama>=50){
+            System.out.println("Not Ortalamanız: "+karneOrtalama);
             System.out.println("Sınıfı Geçtiniz....");
             notHesaplama();
         }else {
-            System.out.println("Not Ortalamanız: "+ortalama);
+            System.out.println("Not Ortalamanız: "+karneOrtalama);
             System.out.println("Sınıfta Kaldınız...");
             notHesaplama();
         }
